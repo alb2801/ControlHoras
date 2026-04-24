@@ -1,0 +1,14 @@
+import sys
+from PySide6.QtWidgets import QApplication
+from src.models.database import init_db
+from src.ui.main_window import MainWindow
+
+def main():
+    init_db()  # Crea la BD si no existe
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
+
+if __name__ == "__main__":
+    main()
